@@ -1,0 +1,179 @@
+:root{--accent:#0f62fe;--muted:#6b7280;--bg:#f7f9fc;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:#0f1724}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#6f9cff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:24px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.8));padding:28px;border-radius:16px;box-shadow:0 6px 30px rgba(12,15,30,0.06)}
+    h1{font-size:32px;margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .ctas{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid #e6eefc;color:var(--accent)}
+
+    .features{display:flex;gap:12px;margin-top:20px}
+    .feat{background:var(--card);padding:12px;border-radius:10px;flex:1;text-align:center;box-shadow:0 4px 18px rgba(12,15,30,0.04)}
+    .feat h4{margin:8px 0 6px}
+
+    /* Portfolio grid */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .tile{background:linear-gradient(180deg,#fff,#fbfdff);height:150px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+
+    /* Sections */
+    section{margin-top:36px}
+    .two-col{display:grid;grid-template-columns:1fr 380px;gap:24px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(12,15,30,0.04)}
+
+    .testimonials{display:flex;flex-direction:column;gap:12px}
+    .test{padding:12px;border-radius:10px;background:#fbfdff;border-left:4px solid var(--accent)}
+
+    footer{margin-top:36px;padding:24px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .gallery{grid-template-columns:1fr}
+      nav{display:none}
+      header{padding:12px}
+    }
+
+    /* small form */
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-top:8px}
+    .small{font-size:14px}
+    .muted{color:var(--muted)}
+
+    /* countdown */
+    .countdown{display:flex;gap:8px;font-weight:700}
+    .countdown .item{background:#fff;padding:8px 12px;border-radius:8px;box-shadow:0 6px 18px rgba(12,15,30,0.04)}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cervicios {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cervicios:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.logo-imagen {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-imagen:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Mejor estilo para las imágenes del portafolio */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--card);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.tile span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  box-sizing: border-box;
+}
+
+.tile:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.tile:hover img {
+  transform: scale(1.1);
+}
+
+/* Estilos para modal de imagen */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.modal-content.zoomed {
+  cursor: zoom-out;
+  transform: scale(2); /* zoom x2 */
+}
+
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
